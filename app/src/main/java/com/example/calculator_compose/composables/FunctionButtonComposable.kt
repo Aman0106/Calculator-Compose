@@ -2,8 +2,6 @@ package com.example.calculator_compose.composables
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -13,15 +11,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.calculator_compose.ui.theme.buttonFunctionColor
-import com.example.calculator_compose.ui.theme.buttonNumberColor
+import com.example.calculator_compose.ui.theme.primaryGreen
+import com.example.calculator_compose.ui.theme.primaryGrey
 
 @Composable
 fun FunctionButtonComposable(
     txt: String,
     modifier: Modifier = Modifier,
-    txtColor:Color = buttonNumberColor,
-    containerColor: Color = buttonFunctionColor
+    txtColor:Color = primaryGrey,
+    containerColor: Color = primaryGreen
 ) {
     Button(
         onClick = { /*TODO*/ },
