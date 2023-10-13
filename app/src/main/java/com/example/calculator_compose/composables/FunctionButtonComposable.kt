@@ -11,8 +11,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.calculator_compose.ui.theme.primaryGreen
 import com.example.calculator_compose.ui.theme.primaryGrey
+import com.example.calculator_compose.view_models.InputViewModel
 
 @Composable
 fun FunctionButtonComposable(
@@ -21,8 +23,15 @@ fun FunctionButtonComposable(
     txtColor:Color = primaryGrey,
     containerColor: Color = primaryGreen
 ) {
+    val inputViewModel = viewModel<InputViewModel>()
     Button(
-        onClick = { /*TODO*/ },
+        onClick = {
+                  when(txt) {
+                      "=" -> inputViewModel.getResult()
+                      "AC" -> inputViewModel.clearInput()
+                      else -> inputViewModel.setInput(txt)
+                  }
+        },
         modifier = modifier
             .padding(horizontal = 2.dp, vertical = 2.dp)
             .height(120.dp),

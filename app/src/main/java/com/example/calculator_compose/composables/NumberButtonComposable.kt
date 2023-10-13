@@ -13,7 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.calculator_compose.ui.theme.primaryGrey
+import com.example.calculator_compose.view_models.InputViewModel
 
 @Composable
 fun NumberButtonComposable(
@@ -22,8 +24,9 @@ fun NumberButtonComposable(
     txtColor:Color = Color.White,
     containerColor: Color = primaryGrey
 ) {
+    val inputViewModel = viewModel<InputViewModel>()
     Button(
-        onClick = { /*TODO*/ },
+        onClick = {inputViewModel.setInput(txt)},
         modifier = modifier
             .padding(top = 6.dp)
             .clip(CircleShape)
